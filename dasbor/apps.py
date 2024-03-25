@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BerandaConfig(AppConfig):
+class DasborConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'beranda'
+    name = 'dasbor'

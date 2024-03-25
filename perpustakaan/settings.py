@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'daftar',
+    'dasbor',
     'masuk',
-    'beranda',
     'pinjaman',
 ]
 
@@ -86,6 +85,9 @@ DATABASES = {
         'PORT':'3306',
         'USER':'root',
         'PASSWORD':'',
+          'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -129,6 +131,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+LOGIN_URL = '/'
+
+LOGUOT_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import FormLogin
 
 def index(request):
@@ -12,6 +12,11 @@ def index(request):
     
         if user is not None:
             login(request, user)
-            return redirect('/login/beranda')
+            return redirect('/dasbor')
 
     return render(request, 'index.html',{'form':form})
+
+def keluar(request):
+    logout(request)
+    request.session.flush()
+    return redirect('index')
